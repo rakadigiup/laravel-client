@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@import "../../vendor/livewire/flux/dist/flux.css";
+@source "../../vendor/livewire/flux/stubs/resources/views/flux";
+/* Warehouse Information System */
+@theme {
+    --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
