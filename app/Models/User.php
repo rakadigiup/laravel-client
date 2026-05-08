@@ -49,6 +49,14 @@ class User extends Authenticatable // implements MustVerifyEmail
     }
 
     /**
+     * Check if the user has admin role.
+     */
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+
+    /**
      * Get the user's initials
      */
     public function initials(): string

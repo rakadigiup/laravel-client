@@ -24,9 +24,10 @@ Route::middleware('auth')->group(function () {
         return view('items');
     })->name('items');
 
+    // Users management: admin only
     Route::get('/users', function () {
         return view('users');
-    })->name('users');
+    })->middleware('admin')->name('users');
 });
 
 require __DIR__.'/auth.php';

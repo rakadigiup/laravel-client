@@ -16,7 +16,9 @@
                     <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>Dashboard</flux:navlist.item>
                     <flux:navlist.item icon="squares-2x2" :href="route('categories')" :current="request()->routeIs('categories')" wire:navigate>Kategori</flux:navlist.item>
                     <flux:navlist.item icon="archive-box" :href="route('items')" :current="request()->routeIs('items')" wire:navigate>Data Barang</flux:navlist.item>
-                    <flux:navlist.item icon="users" :href="route('users')" :current="request()->routeIs('users')" wire:navigate>Kelola User</flux:navlist.item>
+                    @if (auth()->user()->role === 'admin')
+                        <flux:navlist.item icon="users" :href="route('users')" :current="request()->routeIs('users')" wire:navigate>Kelola User</flux:navlist.item>
+                    @endif
                 </flux:navlist.group>
             </flux:navlist>
 
@@ -132,6 +134,7 @@
             {{ $slot }}
         </flux:main>
 
+        @livewireScripts
         @fluxScripts
     </body>
 </html>

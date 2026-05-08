@@ -16,6 +16,20 @@ class Item extends Model
         'satuan',
     ];
 
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'stok' => 'integer',
+            'harga' => 'decimal:2',
+            'category_id' => 'integer',
+        ];
+    }
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
